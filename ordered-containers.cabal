@@ -32,7 +32,8 @@ test-suite foo-test
     build-tool-depends:   hspec-discover:hspec-discover
     other-modules:        Data.MultiMap.Ordered.StrictSpec
     hs-source-dirs:       test
-    build-depends:        base
+    build-depends:        ordered-containers
+                        , base
                         , hspec
     default-language:     Haskell98
 

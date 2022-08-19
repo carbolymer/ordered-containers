@@ -1,5 +1,5 @@
 name:                ordered-containers
-version:             0.2.2
+version:             0.2.3
 synopsis:            Set- and Map-like types that remember the order elements were inserted
 license:             BSD3
 license-file:        LICENSE
@@ -19,7 +19,20 @@ library
                      , Data.Map.Ordered.Strict
                      , Data.MultiMap.Ordered.Strict
                      , Data.Set.Ordered
-  other-modules:       Data.Map.Ordered.Internal, Data.Map.Util
-  build-depends:       base >=4.7 && <5, containers >=0.1 && <0.7
+  other-modules:       Data.Map.Ordered.Internal
+                     , Data.Map.Util
+  build-depends:       base >=4.7 && <5
+                     , containers >=0.1 && <0.7
   default-language:    Haskell98
   ghc-options:         -fno-warn-tabs
+
+test-suite foo-test
+    type:                 exitcode-stdio-1.0
+    main-is:              Spec.hs
+    build-tool-depends:   hspec-discover:hspec-discover
+    other-modules:        Data.MultiMap.Ordered.StrictSpec
+    hs-source-dirs:       test
+    build-depends:        base
+                        , hspec
+    default-language:     Haskell98
+
